@@ -1,0 +1,64 @@
+<h2 style="text-align:center">Administrator page</h2>
+<div class="container">
+    <button class="btn btn-dark btn-block" (click)="onButtonNewAdministrator()">Create new administrator</button>
+    <br>
+<div *ngIf='btnNewAdministratorClicked === true'>
+<!-- <h3 style="text-align:center">Form</h3> -->
+<div class="container">
+    <form [formGroup]='checkoutForm' (ngSubmit)='onSubmit(checkoutForm.value)'>
+        <div>
+            <label>Name (first letter capital):</label>
+            <input type="text" class="form-control" formControlName='name'>
+            <p *ngIf='checkoutForm.get("name").errors?.required' style="color: red;">Field is required</p>
+            <p *ngIf='checkoutForm.get("name").errors?.pattern' style="color: red;">Field is incorrect</p>
+        </div>
+        <div>
+            <label>Surname (first letter capital):</label>
+            <input type="text" class="form-control" formControlName='surname'>
+            <p *ngIf='checkoutForm.get("surname").errors?.required' style="color: red;">Field is required</p>
+            <p *ngIf='checkoutForm.get("surname").errors?.pattern' style="color: red;">Field is incorrect</p>
+        </div>
+        <div>
+            <label>Username (6-12 characters):</label>
+            <input type="text" class="form-control" formControlName='username'>
+            <p *ngIf='checkoutForm.get("username").errors?.required' style="color: red;">Field is required</p>
+            <p *ngIf='checkoutForm.get("username").errors?.pattern' style="color: red;">Field is incorrect</p>
+        </div>
+        <div>
+            <label>Password (6-12 characters):</label>
+            <input type="password" class="form-control" formControlName='password'>
+            <p *ngIf='checkoutForm.get("password").errors?.required' style="color: red;">Field is required</p>
+            <p *ngIf='checkoutForm.get("password").errors?.pattern' style="color: red;">Field is incorrect</p>
+        </div>
+        <div>
+            <label>Confirm password:</label>
+            <input type="password" class="form-control" formControlName='password1'>
+            <p *ngIf='checkoutForm.get("password1").errors?.required' style="color: red;">Field is required</p>
+            <p *ngIf='checkoutForm.get("password1").errors?.pattern' style="color: red;">Field is incorrect</p>
+        </div>
+        <div>
+            <label>Email:</label>
+            <input type="email" class="form-control" formControlName='email'>
+            <p *ngIf='checkoutForm.get("email").errors?.required' style="color: red;">Field is required</p>
+            <p *ngIf='checkoutForm.get("email").errors?.email' style="color: red;">Field is incorrect</p>
+        </div>
+        <div>
+            <label>Phone (example:069-456-7021):</label>
+            <input type="tel" class="form-control" formControlName='phone'>
+            <p *ngIf='checkoutForm.get("phone").errors?.required' style="color: red;">Field is required</p>
+            <p *ngIf='checkoutForm.get("phone").errors?.pattern' style="color: red;">Field is incorrect</p>
+        </div>
+            <button type="submit" class="btn btn-success btn-block" [disabled]='!checkoutForm.valid'>Register</button>
+        </form>
+    </div>
+    <br>
+    </div>
+    <button class="btn btn-dark btn-block">Create new music event</button>
+    <br>
+    <div>
+        <h3>
+            Active events:
+        </h3>
+        Lista evenata administratora i api koji omogucava adminu da ih menja ili obrise...
+    </div>
+</div>

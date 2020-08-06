@@ -1,0 +1,62 @@
+<div *ngIf='loggedIn === true' class="container">
+    <br>
+    <div>
+        <h3 style='text-align:center'> 
+            {{user.name}} profile page
+        </h3> 
+    </div>
+    <br>
+    <br>
+    <div class="wrap">
+    <label class="label label-info" id='name'>
+        <h4>
+        Name : {{user.name}}
+        </h4>
+    </label>
+    <button for='name' class="btn btn-dark">change</button>
+    </div>
+    <br>
+    <div class="wrap">
+        <label class="label label-info" id='surname'>
+            <h4>
+                Surname : {{user.surname}}
+            </h4>
+        </label>
+        <button for='surname' class="btn btn-dark">change</button>
+    </div>
+    <br>
+    <div class="wrap">
+        <label class="label label-info" id='username'>
+            <h4>
+                Username : {{user.username}}
+            </h4>
+        </label>
+        <button for='username' class="btn btn-dark">change</button>
+    </div>
+    <br>
+    <div class="wrap">
+        <label class="label label-info" id='email'>
+            <h4>
+                Email : {{user.email}}
+            </h4>
+        </label>
+        <button for='email' class="btn btn-dark">change</button>
+    </div>
+    <br>
+    <div class="wrap">
+        <label class="label label-info" id='phone'>
+            <h4>
+                Phone number : {{user.phone}}
+            </h4>
+        </label>
+        <button for='phone' class="btn btn-dark">change</button>
+    </div>
+    <button class="btn btn-dark btn-block">Change user data</button>
+    <p>
+        Podaci o useru mogu da se menjaju klikom na pojedinacko dugme change gde se zatim otvara formaa
+        tj. input polje koje se popuni i dugme kojim se posalje zahtev za promenu datog svojstva.
+        Druga ideja je da se npr postoji neki izbor preko radio dugmeta, tj. korisnik bira koja svojstva ce da menja,
+        na osnovu odabranih svojstava mu se generise forma koju on popuni i posalje ili nesto trece...
+    </p>
+</div>
+
