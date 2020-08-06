@@ -9,9 +9,6 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const cors  = require('cors');
 
-// Routers
-const usersRoutes = require('./components/users/usersAPI');
-const eventsRouts = require('./components/events/eventsAPI');
 
 const app = express();
 
@@ -58,11 +55,6 @@ app.use(function (req, res, next) {
 
   next();
 });
-
-// Routes http://localhost:3000/users
-app.use('/users', usersRoutes);
-// Routes http://localhost:3000/events
-app.use('/events', eventsRouts);
 
 
 //Milos-> nove rute za user-a
